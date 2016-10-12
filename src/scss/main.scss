@@ -1,0 +1,24 @@
+@import "_vars.scss";
+@import "_fonts.scss";
+@import "_mixins.scss";
+@import "_media.scss";
+
+
+a,
+button {
+    &:hover {
+        border: none;
+        text-decoration: none;
+        outline: none;
+    }
+    &:focus {
+        outline: none;
+        text-decoration: none;
+    }
+    &:active {
+        outline: none;
+    }
+    &:checked {
+        outline: none;
+    }
+}
