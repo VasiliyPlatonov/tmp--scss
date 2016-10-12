@@ -13,19 +13,16 @@ var gulp = require('gulp'),
     imageminOptipng = require('imagemin-optipng'),
     debug = require('gulp-debug'); // пример => .pipe(debug("title: "))
 
-
-
-
-
-
+  
 // SCSS - конвертирует стили scss => css
 gulp.task('scss', function() {
     return gulp.src('./src/scss/**/*.scss')
         // .pipe(scss({
         //   includePaths: require('bourbon').includePaths
         // }).on('error', scss.logError))             // <== BOURBON
+        .pipe(scss().on('error', scss.logError))
         .pipe(autoprefixer({
-            browsers: ['last 15 versions'],
+            browsers: ['last 2 versions'],
             cascade: true
         }))
         .pipe(gulp.dest('./src/css'))
@@ -34,13 +31,12 @@ gulp.task('scss', function() {
 
 
 
-// СSS - минифицирует css и cкладывает в build
+// BUILD:СSS - минифицирует css и cкладывает в build
 gulp.task('build:css', function() {
     gulp.src('src/css/**/*.css')
         .pipe(cleanCSS({
             compatibility: 'ie9'
         }))
-
         .pipe(rename(function(path) {
             path.basename += '.min';
         }))

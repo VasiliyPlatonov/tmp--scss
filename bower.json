@@ -1,5 +1,5 @@
 {
-  "name": "stantartTask",
+  "name": "standartTask",
   "description": "",
   "main": "",
   "authors": [
@@ -16,7 +16,6 @@
   ],
   "dependencies": {
     "jquery": "^1.*",
-
-
+    "normalize-css": "^5.0.0"
   }
 }
